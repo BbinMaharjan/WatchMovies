@@ -1,4 +1,5 @@
 import { configureStore, applyMiddleware } from "@reduxjs/toolkit";
+import thunkMiddleware from "redux-thunk";
 import logger from "redux-logger";
 import moviesSlice from "./movies/moviesSlice";
 // ...
