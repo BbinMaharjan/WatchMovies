@@ -6,34 +6,32 @@ import { API_KEY, BASE_URL } from "../../utilities/api/config";
 export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
   async () => {
-    const response = await axios
-      .get(`${BASE_URL}/trending/movie/week`, {
-        params: { api_key: API_KEY },
-      })
-      .then((response) => {
-        console.log(response);
-        return response.data.results;
-        // console.log("===>>>>>", response.data.results);
-      })
-      .catch((error) => {
-        console.log("**********", error);
-      });
+    const response = await axios.get(`${BASE_URL}/trending/movie/week`, {
+      params: { api_key: API_KEY },
+    });
+    return response.data.results;
+    // .then((response) => {
+    //   console.log(response);
+    //   // console.log("===>>>>>", response.data.results);
+    // })
+    // .catch((error) => {
+    //   console.log("**********", error);
+    // });
   }
 );
 export const fetchAsyncMoviesDetail = createAsyncThunk(
   "movies/fetchAsyncMovieDetail",
   async (id) => {
-    await axios
-      .get(`${BASE_URL}/movie/${id}`, {
-        params: { api_key: API_KEY },
-      })
-      .then((response) => {
-        return response.data;
-        // console.log("===>>>>>", response.data.results);
-      })
-      .catch((error) => {
-        console.log("**********", error);
-      });
+    const response = await axios.get(`${BASE_URL}/movie/${id}`, {
+      params: { api_key: API_KEY },
+    });
+    return response.data;
+    // .then((response) => {
+    //   // console.log("===>>>>>", response.data.results);
+    // })
+    // .catch((error) => {
+    //   console.log("**********", error);
+    // });
   }
 );
 
