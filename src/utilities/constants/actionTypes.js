@@ -1,0 +1,11 @@
+export const MAKE_API_REQUEST = "MAKE_API_REQUEST";
+export const COMMON_TYPES = {
+  REQUEST: "_REQUEST",
+  SUCCESS: "_SUCCESS",
+  FAILURE: "_FAILURE",
+  CALL_OVER: "_FINISHED",
+};
+
+export const MOVIES_TYPES = {
+  MOVIES_LIST: "ACTION_LIST",
+};
