@@ -11,10 +11,7 @@ function* getMoviesList(action) {
   try {
     const { data } = yield call(
       axios.get,
-      (`${BASE_URL}/trending/movie/week`,
-      {
-        params: { api_key: API_KEY },
-      })
+      "https://jsonplaceholder.typicode.com/todos"
     );
     yield put({ type: MAKE_API_REQUEST, payload: data });
   } catch (exp) {
